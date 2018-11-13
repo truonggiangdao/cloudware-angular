@@ -1,0 +1,19 @@
+$input_bg: $color_grey;
+$input_height: 30px;
+
+.oc-input {
+  &.form-control {
+    @extend .font-text-dark-grey;
+    font-size: $font_size_title;
+    line-height: $input_height;
+    color: $color_dark_grey;
+    border: 0px solid transparent;
+    border-radius: 0;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+    background-color: $input_bg;
+    height: $input_height;
+    padding: 0 #{$input_height / 2};
+  }
+}

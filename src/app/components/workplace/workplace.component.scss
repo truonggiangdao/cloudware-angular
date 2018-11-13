@@ -1,0 +1,185 @@
+@import 'scss/includes/variables';
+
+$wp_bubble_size: 25px;
+$wp_shadow: -0.25px 0.25px 0.75px 0px rgba(0, 0, 0, 0.25);
+$wp_icon_shadow: -0.25px 0.25px 0.75px 0px rgba(0, 0, 0, 0.25);
+$wp_icon_selected_shadow: 0.5px 0.5px 1.5px 0px rgba(0, 0, 0, 0.25);
+
+.workplace-container {
+  width: $wp_bubble_size;
+  max-width: 15vw;
+  position: absolute;
+  z-index: 2;
+  overflow: visible;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+
+  .workplace-bubble-border {
+    position: absolute;
+    content: '';
+    height: 0;
+    width: #{calc(100% + 6px)};
+    padding: 0 0 100% 0;
+    top: -3px;
+    left: -3px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+
+  &.selected {
+    z-index: 3;
+
+    .workplace-bubble-border {
+      border-color: white;
+      box-shadow: $wp_shadow;
+      background-color: rgba($color_dark_green, 0.8);
+    }
+  }
+
+  .workplace-bubble {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding: 0 0 100% 0;
+    background-color: rgba($color_dark_green, 0.8);
+    border-radius: 50%;
+    // opacity: 0.8;
+    z-index: 3;
+  }
+
+  &.selected {
+    .workplace-bubble {
+      background-color: transparent;
+      z-index: 4;
+    }
+  }
+
+  .parameter-bubble-border {
+    width: 48%;
+    height: 0;
+    padding-bottom: 48%;
+    position: absolute;
+    top: -4%;
+    right: -4%;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 4;
+    box-shadow: none;
+  }
+
+  &.selected {
+    .parameter-bubble-border {
+      background-color: white;
+      box-shadow: $wp_icon_selected_shadow;
+    }
+  }
+
+  .parameter-bubble {
+    width: 40%;
+    height: 0;
+    padding-bottom: 40%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    z-index: 4;
+    box-shadow: $wp_icon_shadow;
+    background-color: $color_light_grey;
+
+    &.bubble-dark-green {
+      background-color: $color_dark_green;
+    }
+
+    &.bubble-light-green {
+      background-color: $color_light_green;
+    }
+
+    &.bubble-yellow {
+      background-color: $color_yellow;
+    }
+
+    &.bubble-orange {
+      background-color: $color_orange;
+    }
+
+    &.bubble-red {
+      background-color: $color_red;
+    }
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 0;
+      top: 0;
+      left: 0;
+      padding-bottom: 100%;
+      background-size: 100%;
+    }
+
+    &.bubble-sound {
+      &::before {
+        background-image: url('./icons/icon_sound_small.svg');
+      }
+    }
+
+    &.bubble-light {
+      &::before {
+        background-image: url('./icons/icon_light_small.svg');
+      }
+    }
+
+    &.bubble-temp {
+      &::before {
+        background-image: url('./icons/icon_temp_small.svg');
+      }
+    }
+
+    &.bubble-humidity {
+      &::before {
+        background-image: url('./icons/icon_humidity_small.svg');
+      }
+    }
+
+    &.bubble-co2 {
+      &::before {
+        background-image: url('./icons/icon_co2_small.svg');
+      }
+    }
+  }
+
+  &.selected {
+    .parameter-bubble {
+      box-shadow: none;
+    }
+  }
+
+  &.occupied {
+    width: #{$wp_bubble_size * 0.7};
+
+    .workplace-bubble {
+      background-color: $color_red;
+
+      &::before {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 0;
+        top: 0;
+        left: 0;
+        padding-bottom: 100%;
+        background-image: url('./icons/icon_occupied.svg');
+        background-size: 100%;
+      }
+    }
+
+    &.selected {
+      .workplace-bubble-border {
+        background-color: $color_red;
+      }
+    }
+  }
+}

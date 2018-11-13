@@ -1,8 +1,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "baseUrl": "./src/",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@components/*": ["app/components/*"]
+    },
+    "outDir": "./out-tsc",
     "sourceMap": true,
     "declaration": false,
     "module": "es2015",

@@ -1,0 +1,30 @@
+<div class="main-container container-wp">
+  <app-top-bar
+    *ngIf="isDataLoaded"
+    [locations]="allLocations"
+    [floors]="allFloors"
+    [topBarVisible]="isTopBarVisible"
+    (changeFloor)="onFloorChanged($event)"
+    (changeParameter)="onChangeParameter($event)"
+    (rendered)="onTopBarRendered($event)"
+    (showMorePopup)="isMorePopupShow = true;"></app-top-bar>
+
+  <!-- <app-map-area *ngIf="isMapReady"
+    (toggleFullScreen)="onToggleFullScreen()"
+    [map]="selectedMap"
+    [workplaces]="workplaces"
+    [workplaceReady]="isWorkplaceReady"
+    [selectedParameter]="selectedParameter"></app-map-area> -->
+
+  <app-map-area-static *ngIf="isMapReady"
+    (toggleFullScreen)="onToggleFullScreen($event)"
+    [map]="selectedMap"
+    [workplaces]="workplaces"
+    [workplaceReady]="isWorkplaceReady"
+    [topBarHeight]="topBarHeight"
+    [selectedParameter]="selectedParameter"></app-map-area-static>
+
+  <app-more-popup [visible]="isMorePopupShow" (close)="isMorePopupShow = false;"></app-more-popup>
+  <app-loading-icon *ngIf="checkShowLoadingIcon()" [viewportWith]="viewport.WIDTH"></app-loading-icon>
+  <app-message-network *ngIf="!checkHasNetworkConnection()" [top]="isTopBarVisible ? topBarHeight : 0"></app-message-network>
+</div>

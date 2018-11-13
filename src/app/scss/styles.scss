@@ -1,0 +1,21 @@
+/* global styles */
+@import 'common';
+
+body {
+  background-color: #fff;
+  margin: 0;
+
+  &.device {
+    .app-container {
+        height: 100vh;
+    }
+  }
+
+  &.desktop {
+    background-color: rgba(0, 0, 0, 0.2);
+
+    .app-container {
+        height: 100vh;
+    }
+  }
+}

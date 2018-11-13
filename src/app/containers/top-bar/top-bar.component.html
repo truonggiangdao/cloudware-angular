@@ -1,0 +1,77 @@
+<div class="top-bar-container" [ngClass]="{'top-bar-visible': topBarVisible}"
+  (click)="toggleDropdowns()">
+  <nav-bar (rendered)="triggerRenderEvent($event)">
+    <div class="row oc-row padding-bottom-xs">
+      <div class="oc-col-4 no-padding-right">
+        <div class="text-left">
+          <app-dropdown name="Location"
+            [(value)]="selectedLocation"
+            (change)="onChangeLocation($event)"
+            (focused)="locationDropdownFocused()"
+            [focus]="locationFocused"
+            [options]="locations"></app-dropdown>
+        </div>
+      </div>
+      <div class="oc-col-3 no-padding-right">
+        <div class="text-right">
+          <app-dropdown name="Floor"
+            [(value)]="selectedFloor"
+            (change)="onChangeFloor($event)"
+            (focused)="floorDropdownFocused()"
+            [focus]="floorFocused"
+            [options]="locationFloors"></app-dropdown>
+        </div>
+      </div>
+      <div class="oc-col-3 text-right padding-top-xs">
+        <nav-icon icon="MORE" [active]="iconActive" clickable="true" (click)="showPopup()"></nav-icon>
+      </div>
+    </div>
+
+    <div class="row oc-row no-margin">
+      <div class="oc-col-2 text-center no-padding-left no-padding-right">
+        <nav-btn [active]="iconActive.Sound" (click)="onSwitchParameter('Sound')">
+          <nav-icon icon="SOUND" [active]="iconActive.Sound"></nav-icon>
+          <div class="padding-top-xs font-subtitle-dark-grey text-center" *ngIf="iconActive.Sound">
+            <span>Sound</span>
+          </div>
+        </nav-btn>
+      </div>
+
+      <div class="oc-col-2 text-center no-padding-left no-padding-right">
+        <nav-btn [active]="iconActive.Light" (click)="onSwitchParameter('Light')">
+          <nav-icon icon="LIGHT" [active]="iconActive.Light"></nav-icon>
+          <div class="padding-top-xs font-subtitle-dark-grey text-center" *ngIf="iconActive.Light">
+            <span>Light</span>
+          </div>
+        </nav-btn>
+      </div>
+
+      <div class="oc-col-2 text-center no-padding-left no-padding-right">
+        <nav-btn [active]="iconActive.Temperature" (click)="onSwitchParameter('Temperature')">
+          <nav-icon icon="TEMPERATURE" [active]="iconActive.Temperature"></nav-icon>
+          <div class="padding-top-xs font-subtitle-dark-grey text-center" *ngIf="iconActive.Temperature">
+            <span>Temp.</span>
+          </div>
+        </nav-btn>
+      </div>
+
+      <div class="oc-col-2 text-center no-padding-left no-padding-right">
+        <nav-btn [active]="iconActive.Humidity" (click)="onSwitchParameter('Humidity')">
+          <nav-icon icon="HUMIDITY" [active]="iconActive.Humidity"></nav-icon>
+          <div class="padding-top-xs font-subtitle-dark-grey text-center" *ngIf="iconActive.Humidity">
+            <span>Humidity</span>
+          </div>
+        </nav-btn>
+      </div>
+
+      <div class="oc-col-2 text-center no-padding-left no-padding-right">
+        <nav-btn [active]="iconActive.CO2" (click)="onSwitchParameter('CO2')">
+          <nav-icon icon="CO2" [active]="iconActive.CO2"></nav-icon>
+          <div class="padding-top-xs font-subtitle-dark-grey text-center" *ngIf="iconActive.CO2">
+            <span>CO2</span>
+          </div>
+        </nav-btn>
+      </div>
+    </div>
+  </nav-bar>
+</div>

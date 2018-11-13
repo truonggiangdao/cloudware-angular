@@ -1,0 +1,7 @@
+<app-container *ngIf="appConfigLoaded"
+  [page]="currentPage"
+  (widthChange)="onDimensionChanged('WIDTH', $event)"
+  (heightChange)="onDimensionChanged('HEIGHT', $event)">
+  <!-- App content -->
+  <router-outlet></router-outlet>
+</app-container>

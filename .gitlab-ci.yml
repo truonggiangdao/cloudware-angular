@@ -1,0 +1,10 @@
+deploy_test_success:
+  stage: deploy
+  environment: Staging
+  only:
+    - develop
+  script:
+    - npm i
+    - npm run build
+    - cp -r build/* /var/www/html/
+    - cp /var/www/html/assets/htaccess.txt /var/www/html/.htaccess

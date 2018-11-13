@@ -1,0 +1,6 @@
+{
+  "API_URL": "http://localhost/api",
+  "API_KEY": "{API_URL}",
+  "END_POINT_KEY": "{END_POINT}",
+  "API_URL_FORMAT": "{API_URL}/{END_POINT}"
+}

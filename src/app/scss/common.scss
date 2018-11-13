@@ -1,0 +1,30 @@
+@import './includes/variables';
+@import './includes/fonts';
+@import './includes/spacing';
+@import './includes/grid';
+@import './includes/btn';
+@import './includes/input';
+@import './includes/popup';
+@import './includes/scrollBar';
+
+body {
+  .app-container {
+    position: relative;
+
+    .container-wp {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.clickable {
+  cursor: pointer;
+
+  &.disabled, &[disabled], &:disabled {
+    cursor: default;
+  }
+}

@@ -1,0 +1,83 @@
+<div class="workplace-detail-container" #workplaceDetailrContainer>
+  <div class="workplace-detail-body" *ngIf="workplace">
+    <h4 class="margin-bottom-xs font-title-dark-grey">{{workplace.name}}</h4>
+    <p *ngIf="!workplace.occupied" class="margin-bottom-xl font-text-dark-green">Free workplace</p>
+    <p *ngIf="workplace.occupied" class="margin-bottom-xl font-text-red">Occupied workplace</p>
+
+    <div class="row oc-row no-margin">
+      <div class="oc-col-2 no-padding text-center">
+        <div class="margin-bottom-sm">
+          <div class="parameter-bubble" [ngClass]="getClass(workplace.sound)">
+            <img src="assets/icons/icon_sound_small.svg" />
+          </div>
+        </div>
+        <div class="margin-bottom-sm">
+          <span class="font-text-dark-grey">
+            <strong>{{ getParameterValue(workplace.sound.value, 'dB') }}</strong>
+          </span>
+        </div>
+        <div class="font-text-light-grey">{{workplace.sound.status}}</div>
+      </div>
+
+      <!-- Light -->
+      <div class="oc-col-2 no-padding text-center">
+        <div class="margin-bottom-sm">
+          <div class="parameter-bubble" [ngClass]="getClass(workplace.light)">
+            <img src="assets/icons/icon_light_small.svg" />
+          </div>
+        </div>
+        <div class="margin-bottom-sm">
+          <span class="font-text-dark-grey">
+            <strong>{{ getParameterValue(workplace.light.value, 'lux') }}</strong>
+          </span>
+        </div>
+        <div class="font-text-light-grey">{{workplace.light.status}}</div>
+      </div>
+
+      <!-- Temperature -->
+      <div class="oc-col-2 no-padding text-center">
+        <div class="margin-bottom-sm">
+          <div class="parameter-bubble" [ngClass]="getClass(workplace.temperature)">
+            <img src="assets/icons/icon_temp_small.svg" />
+          </div>
+        </div>
+        <div class="margin-bottom-sm">
+          <span class="font-text-dark-grey">
+            <strong>{{ getParameterValue(workplace.temperature.value, '&#8451;') }}</strong>
+          </span>
+        </div>
+        <div class="font-text-light-grey">{{workplace.temperature.status}}</div>
+      </div>
+
+      <!-- Humidity -->
+      <div class="oc-col-2 no-padding text-center">
+        <div class="margin-bottom-sm">
+          <div class="parameter-bubble" [ngClass]="getClass(workplace.humidity)">
+            <img src="assets/icons/icon_humidity_small.svg" />
+          </div>
+        </div>
+        <div class="margin-bottom-sm">
+          <span class="font-text-dark-grey">
+            <strong>{{ getParameterValue(workplace.humidity.value, '%') }}</strong>
+          </span>
+        </div>
+        <div class="font-text-light-grey">{{workplace.humidity.status}}</div>
+      </div>
+
+      <!-- CO2 -->
+      <div class="oc-col-2 no-padding text-center">
+        <div class="margin-bottom-sm">
+          <div class="parameter-bubble" [ngClass]="getClass(workplace.co2)">
+            <img src="assets/icons/icon_co2_small.svg" />
+          </div>
+        </div>
+        <div class="margin-bottom-sm">
+          <span class="font-text-dark-grey">
+            <strong>{{ getParameterValue(workplace.co2.value, 'ppm') }}</strong>
+          </span>
+        </div>
+        <div class="font-text-light-grey">{{workplace.co2.status}}</div>
+      </div>
+    </div>
+  </div>
+</div>

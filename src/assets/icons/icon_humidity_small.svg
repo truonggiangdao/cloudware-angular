@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
+	 height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g id="Layer_17">
+</g>
+<g id="White_icons">
+	<g id="Humidity_small">
+		<path fill="#FFFFFF" d="M42.545,24.542L32.005,14L21.46,24.542c-5.829,5.827-5.829,15.268,0,21.09
+			c5.819,5.824,15.265,5.824,21.086,0C48.368,39.811,48.368,30.37,42.545,24.542z M30.057,33.141c-0.79,0.788-1.837,1.22-2.949,1.22
+			c-1.113,0-2.16-0.433-2.948-1.219c-0.79-0.788-1.224-1.836-1.224-2.95c0.001-1.113,0.435-2.158,1.224-2.944l2.95-2.952
+			l2.948,2.953C31.677,28.872,31.677,31.515,30.057,33.141z"/>
+		<path fill="#FFFFFF" d="M27.109,25.541l-2.328,2.33c-0.623,0.62-0.965,1.444-0.966,2.322c0,0.879,0.342,1.705,0.965,2.327
+			c0.622,0.62,1.449,0.963,2.327,0.963c0.878,0,1.704-0.342,2.327-0.963c1.277-1.282,1.277-3.368-0.001-4.649L27.109,25.541z"/>
+	</g>
+</g>
+<g id="Occupied">
+</g>
+<g id="Inactive_icons">
+	<g id="Light_icon">
+	</g>
+	<g id="Temperature_icon">
+	</g>
+	<g id="Sound_icon">
+	</g>
+	<g id="Humidity_icon">
+	</g>
+	<g id="CO2_Icon">
+	</g>
+</g>
+<g id="Active_icons">
+	<g id="Light_icon_copy">
+	</g>
+	<g id="Temperature_icon_copy">
+	</g>
+	<g id="Sound_icon_copy">
+	</g>
+	<g id="Humidity_icon_copy">
+	</g>
+	<g id="CO2_Icon_copy">
+	</g>
+</g>
+<g id="Arrow">
+</g>
+<g id="More">
+</g>
+</svg>

@@ -1,0 +1,25 @@
+<div class="dropdown-container padding-top-xs" (click)="containerClicked($event)"
+  [ngClass]="{'oc-dropdown-single-value': !(options && options.length > 1)}">
+  <div class="dropdown-label font-subtitle-light-grey padding-bottom-xs"
+    [ngClass]="{'oc-label-single-value': !(options && options.length > 1)}">
+    <span>{{name}}</span>
+  </div>
+  
+  <div class="oc-select" [ngClass]="{'oc-single-value': !(options && options.length > 1)}">
+    <div class="oc-selected-value font-title-dark-grey">
+      <span>{{value ? value.name : '&nbsp;'}}</span>
+    </div>
+    <div class="oc-dropdown" *ngIf="options && options.length > 1">
+      <img class="oc-dropdown-arrow"
+        src="assets/icons/icon_arrow_dropdown.svg"/>
+
+      <ul class="oc-dropdown-list" *ngIf="isDropdownShow">
+        <li *ngFor="let option of options"
+          [ngClass]="{'selected': value && value.id === option.id}"
+          (click)="select(option, $event)">
+          <span>{{ option.name }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

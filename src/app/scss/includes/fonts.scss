@@ -1,0 +1,87 @@
+.font {
+  &-base {
+    font-family: $font_default;
+    letter-spacing: $letter_spacing_default;
+    font-size: $font_size_default;
+    line-height: $font_size_default;
+    font-weight: $font_weight_default;
+  }
+
+  &-base-white {
+    @extend .font-base;
+    color: $color_white;
+  }
+
+  &-title-base {
+    @extend .font-base;
+    font-weight: $font_weight_bold;
+  }
+
+  &-title-dark-grey {
+    @extend .font-title-base;
+    font-size: $font_size_title;
+    line-height: $font_size_title;
+    color: $color_dark_grey;
+  }
+
+  &-title-white {
+    @extend .font-title-base;
+    font-size: $font_size_title;
+    line-height: $font_size_title;
+    color: $color_white;
+  }
+
+  &-subtitle-light-grey {
+    @extend .font-title-base;
+    font-size: $font_size_default;
+    line-height: $font_size_default;
+    color: $color_light_grey;
+  }
+
+  &-subtitle-dark-grey {
+    @extend .font-title-base;
+    font-size: $font_size_default;
+    line-height: $font_size_default;
+    color: $color_dark_grey;
+  }
+
+  &-text-light-grey {
+    @extend .font-base;
+    color: $color_light_grey;
+  }
+
+  &-text-dark-grey {
+    @extend .font-base;
+    color: $color_dark_grey;
+  }
+
+  &-text-light-green {
+    @extend .font-base;
+    color: $color_light_green;
+  }
+
+  &-text-dark-green {
+    @extend .font-base;
+    color: $color_dark_green;
+  }
+
+  &-text-red, &-error-message {
+    @extend .font-base;
+    color: $color_red;
+  }
+
+  &-app-title {
+    @extend .font-base;
+    font-weight: $font_weight_extrabold;
+    font-size: $font_size_bigtitle;
+    line-height: $font_size_bigtitle;
+    color: $color_highlight_yellow;
+  }
+
+  &-company-code {
+    @extend .font-base;
+    font-size: $font_size_title;
+    line-height: $font_size_title;
+    color: $color_dark_grey;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="map-img-wp" #parentContainer
+  (click)="onClick($event)"
+  (mousewheel)="onMouseWheel($event)"
+  (DOMMouseScroll)="onMouseWheel($event, true)"
+  (pan)="onPan($event)"
+  (panstart)="onPanStart($event)"
+  (panend)="onPanEnd()"
+  (pinch)="onPinch($event)"
+  (pinchstart)="onPinchStart()"
+  (pinchend)="onPinchEnd()"
+  (gesturestart)="onGestureStart()"
+  (gesturechange)="onGestureChange($event)"
+  (gestureend)="onGestureEnd()"
+  (doubletap)="onDoubletap($event)"
+  >
+  <div class="map-img-container"
+    [ngStyle]="imgStyle"
+    #imgContainer>
+    <img #imgElement class="map-img" [src]="img" (load)="onImgLoaded()" />
+    <ng-content></ng-content>
+  </div>
+</div>

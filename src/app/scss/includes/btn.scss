@@ -1,0 +1,29 @@
+$btn_height: 40px;
+
+.oc-btn {
+  &.btn {
+    height: $btn_height;
+    border-radius: $btn_height / 2;
+    border: 0px solid transparent;
+    outline: none;
+    text-align: center;
+    padding: 0 #{$btn_height / 2};
+    @extend .font-title-dark-grey;
+    line-height: $btn_height;
+    background-color: $color_highlight_yellow;
+
+    &:focus,
+    &:active:not(:disabled):not(.disabled) {
+      color: $color_dark_grey;
+      box-shadow: none;
+      background-color: $color_highlight_yellow;
+    }
+
+    &.disabled, &[disabled], &:disabled {
+      @extend .font-title-white;
+      color: $color_white;
+      line-height: $btn_height;
+      background-color: $color_dark_grey;
+    }
+  }
+}

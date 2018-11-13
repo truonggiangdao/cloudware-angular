@@ -1,0 +1,21 @@
+{
+  "DATA": [
+    {
+      "title": "Donec aliquam",
+      "contents": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacinia urna magna, sed suscipit urna interdum at. Nunc vitae libero felis. Sed id mauris in nisi ornare venenatis.",
+        "https://suslabnwe-de.io.tudelft.nl/images/OfficeVitae-plattegrond.png",
+        "Donec aliquam in ex in sodales. Nullam finibus mollis tincidunt. Integer eu nisl quis elit placerat porta at sit amet urna. Mauris semper urna eu metus euismod, quis lobortis ex egestas."
+      ]
+    },
+  {
+      "title": "Nullam finibus mollis",
+      "contents": [
+        "https://suslabnwe-de.io.tudelft.nl/images/OfficeVitae-plattegrond.png",
+        "Sed id mauris in nisi ornare venenatis. Donec aliquam in ex in sodales. Nullam finibus mollis tincidunt. Integer eu nisl quis elit placerat porta at sit amet urna. Mauris semper urna eu metus euismod, quis lobortis ex egestas.",
+        "https://suslabnwe-de.io.tudelft.nl/images/OfficeVitae-plattegrond.png",
+        "Pellentesque lacinia urna magna, sed suscipit urna interdum at. Nunc vitae libero felis. Sed id mauris in nisi ornare venenatis. Donec aliquam in ex in sodales. Nullam finibus mollis tincidunt. Integer eu nisl quis elit placerat porta at sit amet urna. Mauris semper urna eu metus euismod, quis lobortis ex egestas."
+      ]
+    }
+  ]
+}

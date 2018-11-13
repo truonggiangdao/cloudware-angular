@@ -1,0 +1,8 @@
+export enum Color {
+  RED = 'RED',
+  ORANGE = 'ORANGE',
+  YELLOW = 'YELLOW',
+  LIGHT_GREEN = 'LIGHT_GREEN',
+  DARK_GREEN = 'DARK_GREEN',
+  LIGHT_GRAY = 'LIGHT_GRAY',
+}

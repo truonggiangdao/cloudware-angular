@@ -1,0 +1,27 @@
+.oc-row {
+  .oc-col-1,
+  .oc-col-2,
+  .oc-col-3,
+  .oc-col-4,
+  .oc-col-5,
+  .oc-col-6,
+  .oc-col-7,
+  .oc-col-8,
+  .oc-col-9,
+  .oc-col-10 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  $oc_grid_sizes: 1 2 3 4 5 6 7 8 9 10;
+
+  @each $size in $oc_grid_sizes {
+    .oc-col-#{$size} {
+      flex: 0 0 #{$size * 10%};
+      max-width: #{$size * 10%};
+    }
+  }
+}

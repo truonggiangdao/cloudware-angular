@@ -1,0 +1,37 @@
+<div class="container-wp login-container">
+  <div class="login-form" [ngClass]="{'keyboard-on': isKeyboardOn}">
+    <div class="row">
+      <div class="col">
+        <h1 class="app-title font-app-title text-center">{{appTitle}}</h1>
+        <p class="app-organization font-text-light-grey text-center">by {{organizationName}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p class="login-instruction font-subtitle-dark-grey text-center">{{instruction}}</p>
+        <input type="text" class="form-control oc-input"
+          [(ngModel)]="companyCode"
+          (keyup)="onKeyup($event)"
+          contentEditable=true
+          (change)="onChange()"
+          (paste)="onChange()"
+          (focus)="onFocusIn()"
+          (focusout)="onFocusOut()" />
+        <p class="login-error-message text-center font-error-message">
+          {{errorMessage ? errorMessage : '&nbsp;'}}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <button type="button"
+          class="btn btn-primary oc-btn login-btn"
+          [ngClass]="{disabled: loading || !isCodeValid}"
+          (click)="!loading && isCodeValid && onLogin()"
+          >{{loading ? 'Logging In...' : 'Login'}}</button>
+      </div>
+    </div>
+  </div>
+  <app-loading-icon *ngIf="checkShowLoadingIcon()" [viewportWith]="viewport.WIDTH"></app-loading-icon>
+  <app-message-network *ngIf="!checkHasNetworkConnection()"></app-message-network>
+</div>

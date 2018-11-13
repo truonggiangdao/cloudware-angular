@@ -1,0 +1,24 @@
+
+.scroll-container {
+  .ps, .ps--active-y, .ps--scrolling-y {
+    .ps__rail-y {
+      .ps__thumb-y {
+        background-color: #b1b1b1 !important;
+        border-radius: 0px !important;
+        width: 8px;
+        right: 0px !important;
+        cursor: pointer;
+      }
+    }
+  } 
+  .ps.ps--scrolling-y { 
+    .ps__rail-y{
+      background-color: #fff !important;
+    }
+  }
+  .ps {
+    .ps__rail-y:hover, .ps__rail-y.ps--clicking {
+      background-color: #fff !important;
+    }
+  } 
+}

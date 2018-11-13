@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
+	 height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g id="Layer_17">
+</g>
+<g id="White_icons">
+</g>
+<g id="Occupied">
+</g>
+<g id="Inactive_icons">
+	<g id="Light_icon">
+	</g>
+	<g id="Temperature_icon">
+	</g>
+	<g id="Sound_icon">
+	</g>
+	<g id="Humidity_icon">
+	</g>
+	<g id="CO2_Icon">
+	</g>
+</g>
+<g id="Active_icons">
+	<g id="Light_icon_copy">
+	</g>
+	<g id="Temperature_icon_copy">
+	</g>
+	<g id="Sound_icon_copy">
+	</g>
+	<g id="Humidity_icon_copy">
+	</g>
+	<g id="CO2_Icon_copy">
+	</g>
+</g>
+<g id="Arrow">
+	<g>
+		<path id="Arrow_1_" fill="#FFCC00" d="M31.874,49.835L3.147,21.114c-1.529-1.529-1.529-4.004,0-5.533
+			c1.529-1.526,4.008-1.526,5.537,0l23.19,23.19l23.448-23.457c1.529-1.532,4.002-1.532,5.531,0c1.529,1.524,1.529,4.002,0,5.531
+			L31.874,49.835z"/>
+		<path fill="#FFCC00" d="M31.874,51.249L2.44,21.821C1.512,20.893,1,19.659,1,18.347c0-1.312,0.512-2.545,1.44-3.474
+			c0.929-0.928,2.163-1.438,3.476-1.438c1.312,0,2.546,0.51,3.475,1.437l22.483,22.484l22.741-22.75
+			c0.928-0.93,2.161-1.442,3.472-1.442c1.312,0,2.545,0.513,3.474,1.443c0.926,0.922,1.438,2.153,1.439,3.465
+			c0.002,1.314-0.51,2.55-1.44,3.479L31.874,51.249z"/>
+	</g>
+</g>
+<g id="More">
+</g>
+</svg>

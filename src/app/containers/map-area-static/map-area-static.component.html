@@ -1,0 +1,32 @@
+<div class="map-area-container" (click)="onClickMap($event)">
+
+  <div class="map" *ngIf="map">
+    <map-img *ngIf="isMapReady"
+      [img]="getMapFullUrl(map.url)"
+      [width]="map.width"
+      [height]="map.height"
+      [defaultRatio]="imgDefaultRatio"
+      [focusAt]="focusArea"
+      (loaded)="onImgLoaded($event)">
+      <workplace-bubble
+        *ngFor="let workplace of workplaces"
+        [x]="workplace.x"
+        [y]="workplace.y"
+        [defaultRatio]="imgDefaultRatio"
+        [viewportWidth]="viewport.WIDTH"
+        [ratio]="imgRatio"
+        [visible]="workplaceReady && workplace.hasLocationData"
+        [selected]="selectedWorkplace && selectedWorkplace.id === workplace.id"
+        [occupied]="workplace.occupied"
+        [status]="getWorkplaceStatus(selectedParameter, workplace)"
+        [parameter]="selectedParameter"
+        (click)="toggleWorkplaceDetail(workplace, $event)"></workplace-bubble>
+    </map-img>
+
+    <workplace-detail
+      *ngIf="showWorkplaceDetail"
+      [workplace]="selectedWorkplace"
+      (rendered)="onDetailPanelRendered($event)"
+      (click)="onClickDetailPanel($event)"></workplace-detail>
+  </div>
+</div>
