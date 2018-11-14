@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-loading-icon',
+  selector: 'loading-icon',
   templateUrl: './loading-icon.component.html',
   styleUrls: ['./loading-icon.component.scss']
 })
@@ -10,7 +10,7 @@ export class LoadingIconComponent implements OnInit, OnChanges {
   iconPath = 'assets/icons/animated-loading-icon.gif';
   @Input() viewportWith: number;
   styles: Object;
-  iconWithHeight = 0.1;
+  iconRatio = 0.1;
 
   constructor() { }
 
@@ -24,8 +24,8 @@ export class LoadingIconComponent implements OnInit, OnChanges {
   updateStyle = () => {
     if (this.viewportWith) {
       this.styles = {
-        width: `${this.iconWithHeight * this.viewportWith}px`,
-        hieght: `${this.iconWithHeight * this.viewportWith}px`,
+        width: `${this.iconRatio * this.viewportWith}px`,
+        hieght: `${this.iconRatio * this.viewportWith}px`,
       };
     } else {
       this.styles = {

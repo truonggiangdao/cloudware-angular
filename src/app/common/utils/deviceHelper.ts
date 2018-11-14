@@ -2,7 +2,7 @@ import * as MobileDetect from 'mobile-detect';
 
 /**
  * get device detector instance
- * @return {MobileDetect} deviceDetector
+ * @return MobileDetect instance
  */
 const getDeviceDetector = () => {
   const userAgent = window.navigator.userAgent || window.navigator.vendor;
@@ -11,25 +11,25 @@ const getDeviceDetector = () => {
 
 /**
  * check if current device is mobile (phone/tablet)
- * @return {boolean}
+ * @return boolean
  */
 export const isMobile = () => {
   const detector = getDeviceDetector();
-  return detector && detector.mobile();
+  return Boolean(detector && detector.mobile());
 };
 
 /**
  * check if current device is phone
- * @return {boolean}
+ * @return boolean
  */
 export const isPhone = () => {
   const detector = getDeviceDetector();
-  return detector && detector.phone();
+  return Boolean(detector && detector.phone());
 };
 
 /**
  * check if current device is an IPhone
- * @return {boolean}
+ * @return boolean
  */
 export const isIPhone = () => {
   const detector = getDeviceDetector();
@@ -38,11 +38,11 @@ export const isIPhone = () => {
 
 /**
  * check if current device is tablet
- * @return {boolean}
+ * @return boolean
  */
 export const isTablet = () => {
   const detector = getDeviceDetector();
-  return detector && detector.tablet();
+  return Boolean(detector && detector.tablet());
 };
 
 export default {

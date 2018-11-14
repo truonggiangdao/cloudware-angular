@@ -32,6 +32,5 @@
       </div>
     </div>
   </div>
-  <app-loading-icon *ngIf="checkShowLoadingIcon()" [viewportWith]="viewport.WIDTH"></app-loading-icon>
-  <app-message-network *ngIf="!checkHasNetworkConnection()"></app-message-network>
+  <loading-icon *ngIf="checkShowLoadingIcon()" [viewportWith]="viewport.WIDTH"></loading-icon>
 </div>

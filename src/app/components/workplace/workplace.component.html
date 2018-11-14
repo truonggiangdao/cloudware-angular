@@ -1,8 +1,0 @@
-<div class="workplace-container"
-  [ngClass]="{'occupied': occupied, 'selected': selected, 'd-none': !visible}"
-  [ngStyle]="styles">
-  <div class="workplace-bubble-border" [ngStyle]="containerStyles">&nbsp;</div>
-  <div #workplaceBubble class="workplace-bubble">&nbsp;</div>
-  <div *ngIf="!occupied" class="parameter-bubble-border">&nbsp;</div>
-  <div *ngIf="!occupied" class="parameter-bubble" [ngClass]="classes">&nbsp;</div>
-</div>

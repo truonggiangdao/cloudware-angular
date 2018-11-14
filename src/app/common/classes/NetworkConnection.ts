@@ -1,3 +1,3 @@
 export class NetworkConnection {
-    hasNetworkConnection = true;
+    online = true;
 }
