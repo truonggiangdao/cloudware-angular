@@ -2,17 +2,16 @@ import { validateEmail, validatePassword } from './validateHelper';
 
 describe('ValidateHelper', () => {
   it('validateEmail should works correctly', () => {
-    expect(validateEmail('OccuP')).toBe(true);
-    expect(validateEmail('OccuP12')).toBe(false);
-    expect(validateEmail('OccuP1')).toBe(false);
-    expect(validateEmail('OccuP12342314')).toBe(false);
-    expect(validateEmail('12')).toBe(false);
-    expect(validateEmail('123')).toBe(false);
-    expect(validateEmail('Occ1')).toBe(false);
-    expect(validateEmail('Occu#')).toBe(false);
-    expect(validateEmail('Occ#uP')).toBe(false);
-    expect(validateEmail('OccuP@')).toBe(false);
-    expect(validateEmail('Occ12')).toBe(true);
+    expect(validateEmail('sample@example.com')).toBe(true);
+    expect(validateEmail('sam.ple@example.com')).toBe(true);
+    expect(validateEmail('sample@exam.ple.com')).toBe(true);
+    expect(validateEmail('sa.mp.le@example.org')).toBe(false);
+    expect(validateEmail('sample@example')).toBe(false);
+    expect(validateEmail('sample@')).toBe(false);
+    expect(validateEmail('sample')).toBe(false);
+    expect(validateEmail('sa@mp$le')).toBe(false);
+    expect(validateEmail('!@#$%^&*(')).toBe(false);
+    expect(validateEmail('')).toBe(false);
   });
 
   it('validatePassword should works correctly', () => {

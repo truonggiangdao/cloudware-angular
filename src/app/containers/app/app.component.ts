@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '@app/services/http.service';
+import { HttpService } from '@app/services/api/http.service';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { AppConfig } from '@app/common/classes/AppConfig';
 import { ViewportDetails } from '@app/common/classes/ViewportDetails';
 import deviceHelper from '@app/common/utils/deviceHelper';
 import { TokenService } from '@app/services/token.service';
-import { LoginService } from '@app/services/login/login.service';
+import { LoginService } from '@app/services/api/auth.service';
 
 @Component({
   selector: 'app-root',
