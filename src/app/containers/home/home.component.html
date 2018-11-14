@@ -1,0 +1,23 @@
+<div class="container-wp home-container">
+  <top-nav></top-nav>
+  <div class="container-fluid">
+    <!-- Data is not ready -->
+    <div *ngIf="!dataLoaded" class="row">
+      <div class="col">
+        <h1 class="text-center">Loading...</h1>
+      </div>
+    </div>
+  
+    <!-- Data is ready -->
+    <div *ngIf="dataLoaded" class="row">
+      <div class="col-12">
+        <h1 class="text-center">{{ homeStore.intro }}</h1>
+      </div>
+  
+      <div class="col-12 pt-5 text-center">
+        <span class="btn btn-link" (click)="goToLogin()">Login</span>
+        <span class="btn btn-link" (click)="logOut()">Logout</span>
+      </div>
+    </div>
+  </div>
+</div>

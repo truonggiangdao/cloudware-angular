@@ -4,6 +4,7 @@
   "END_POINT_KEY": "{END_POINT}",
   "API_URL_FORMAT": "{API_URL}/{END_POINT}",
   "LOGIN": "login",
+  "GET_USER_PROFILE": "profile",
   "GET_HOME_CONTENT": "home",
   "GET_POSTS": "posts",
   "GET_ARTICLES": "articles"

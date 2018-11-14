@@ -35,7 +35,28 @@ export class HttpService {
     return url;
   }
 
+  getQueryString(params: Object = {}) {
+    let query = '';
+    Object.keys(params).forEach((currentKey) => {
+      if (params[currentKey]) {
+        query = (query ? `${query}&` : '') + currentKey + '=' + params[currentKey];
+      }
+    });
+    return query;
+  }
+
+  compileUrl(url: string, queryString: string) {
+    if (!queryString) {
+      return url;
+    }
+    if (url.indexOf('?') !== -1) {
+      return url + '&' + queryString;
+    }
+    return url + '?' + queryString;
+  }
+
   request<T>(verb: string, endpoint: string, params: Object = {}, includeToken = true) {
+    const queryString = this.getQueryString(params);
     const url = this.getUrl(endpoint);
     const options = {
       headers: new HttpHeaders({ includeToken: includeToken ? 'TRUE' : '' }),
@@ -44,34 +65,22 @@ export class HttpService {
     let request: Observable<T>;
     switch (verb) {
       case HTTP_VERBS.POST:
-        request = this.http.post<T>(url, options);
+        request = this.http.post<T>(url, params, options);
         break;
 
       case HTTP_VERBS.PUT:
-        request = this.http.put<T>(url, options);
+        request = this.http.put<T>(url, params, options);
         break;
 
       case HTTP_VERBS.DELETE:
-        request = this.http.delete<T>(url, options);
+        request = this.http.delete<T>(this.compileUrl(url, queryString), options);
         break;
 
       default:
-        request = this.http.get<T>(url, options);
+        request = this.http.get<T>(this.compileUrl(url, queryString), options);
         break;
     }
     return request;
-  }
-
-  getQueryString(params: Object = {}) {
-    return Object.keys(params).reduce((accummulated, currentKey) => {
-      if (!accummulated) {
-        accummulated = '';
-      }
-      if (params[currentKey]) {
-        accummulated = (accummulated ? `${accummulated}&` : '') + `${currentKey}=${params[currentKey]}`;
-      }
-      return accummulated;
-    });
   }
 
   get<T>(endpoint: string, params: Object = {}, includeToken = true) {

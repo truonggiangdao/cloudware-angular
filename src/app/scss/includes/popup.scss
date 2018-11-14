@@ -1,4 +1,4 @@
-.oc-popup-container {
+.cw-popup-container {
   position: absolute;
   z-index: 10;
   top: 0;
@@ -8,19 +8,19 @@
   padding: 15px;
   background-color: rgba(0, 0, 0, .5);
 
-  .oc-popup-wp {
+  .cw-popup-wp {
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0.25px 0.5px 0.75px 0px rgba(0, 0, 0, 0.27);
 
-    .oc-popup-header,
-    .oc-popup-body,
-    .oc-popup-footer {
+    .cw-popup-header,
+    .cw-popup-body,
+    .cw-popup-footer {
       padding: 15px;
     }
 
-    .oc-popup-header {
-      .oc-popup-close-btn {
+    .cw-popup-header {
+      .cw-popup-close-btn {
         height: 13px;
         font-size: $font_size_title;
         padding: 15px;
@@ -31,7 +31,7 @@
       }
     }
 
-    .oc-popup-footer {
+    .cw-popup-footer {
       background-color: rgba(0, 0, 0, 0.1);
       border-top: 1px solid rgba(0, 0, 0, 0.1);
     }

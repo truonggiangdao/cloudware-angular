@@ -1,0 +1,63 @@
+<div class="login-form">
+  <!-- form title -->
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center">Login</h1>
+    </div>
+  </div>
+
+  <!-- email -->
+  <div class="row pt-2">
+    <div class="col">
+      <p class="text-center"><strong>{{ fields.EMAIL }}:</strong></p>
+      <input type="text" class="form-control"
+        [(ngModel)]="email"
+        (keyup)="onKeyup($event)"
+        contentEditable=true
+        (change)="onChange(fields.EMAIL)"
+        inputFocus
+      />
+      <p *ngIf="error.email" class="text-center text-danger">
+        {{ error.email }}
+      </p>
+    </div>
+  </div>
+
+  <!-- password -->
+  <div class="row pt-2">
+    <div class="col">
+      <p class="text-center"><strong>{{ fields.PASSWORD }}:</strong></p>
+      <input type="password" class="form-control"
+        [(ngModel)]="password"
+        (keyup)="onKeyup($event)"
+        contentEditable=true
+        (change)="onChange(fields.PASSWORD)"
+      />
+      <p *ngIf="error.password" class="text-center text-danger">
+        {{ error.password }}
+      </p>
+    </div>
+  </div>
+
+  <!-- API error -->
+  <p *ngIf="error.response" class="py-2 text-center text-danger">
+    {{ error.response }}
+  </p>
+
+  <!-- links -->
+  <div class="row pt-2">
+    <div class="col">
+      <p class="text-center"><a (click)="goToRegister()">Create new account</a></p>
+      <p class="text-center"><a (click)="goToForgot()">Forgot password</a></p>
+    </div>
+  </div>
+
+  <!-- submit button -->
+  <div class="row">
+    <div class="col text-center">
+      <button type="button" class="btn btn-primary" (click)="onLogin()">
+        Login
+      </button>
+    </div>
+  </div>
+</div>

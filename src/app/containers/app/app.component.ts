@@ -5,7 +5,6 @@ import { AppConfig } from '@app/common/classes/AppConfig';
 import { ViewportDetails } from '@app/common/classes/ViewportDetails';
 import deviceHelper from '@app/common/utils/deviceHelper';
 import { TokenService } from '@app/services/token.service';
-import { LoginService } from '@app/services/api/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -23,23 +22,15 @@ export class AppComponent implements OnInit {
     private viewport: ViewportDetails,
     private router: Router,
     private tokenService: TokenService,
-    private loginService: LoginService,
   ) { }
 
   ngOnInit() {
     this.registerNavEventListener();
     this.setDeviceClassToBody();
-    this.calcViewportDimension();
     this.httpService.getConfig()
     .subscribe(
     this.doAfterGetConfig
     );
-  }
-
-  runIntervalNetworkChecking = () => {
-    setInterval(() => {
-      this.loginService.loginCompanyCode('').subscribe();
-    }, this.appConfig.REFRESH_DURATION);
   }
 
   onDimensionChanged = (type, data) => {
@@ -60,27 +51,16 @@ export class AppComponent implements OnInit {
     .subscribe((event) => {
       if (event instanceof NavigationStart) {
         const token = this.tokenService.getToken();
-        if (token) {
-          this.appConfig.AUTHENTICATED = true;
-        } else {
-          this.appConfig.AUTHENTICATED = false;
-        }
-        if (event.url === '/login' && token) {
+        if (event.url === '/auth' && token) {
           this.goToMain();
         }
-        if (event.url !== '/login' && !token) {
+        if (event.url !== '/auth' && event.url !== '/' && !token) {
           this.goToLogin();
         }
       }
 
       if (event instanceof NavigationEnd) {
-        if (event.url === '/login') {
-          this.currentPage = 'login';
-        } else if (event.url === '/' ) {
-          this.currentPage = 'main';
-        } else {
-          this.currentPage = 'other';
-        }
+        this.currentPage = event.url;
       }
     });
   }
@@ -99,31 +79,16 @@ export class AppComponent implements OnInit {
     }
   }
 
-  calcViewportDimension = () => {
-    if (deviceHelper.isMobile()) {
-      document.body.classList.add('device');
-      if (deviceHelper.isPhone()) {
-        document.body.classList.add('device-phone');
-      }
-      if (deviceHelper.isTablet()) {
-        document.body.classList.add('device-tablet');
-      }
-    } else {
-      document.body.classList.add('desktop');
-    }
-  }
-
   doAfterGetConfig = (data) => {
     (Object).assign(this.appConfig, data);
     this.appConfigLoaded = true;
-    this.runIntervalNetworkChecking();
   }
 
   goToMain = () => {
-    this.router.navigate(['/']);
+    this.router.navigate(['/main']);
   }
 
   goToLogin = () => {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/auth']);
   }
 }

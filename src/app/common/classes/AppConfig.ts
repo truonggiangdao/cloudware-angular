@@ -9,6 +9,7 @@ export class AppConfig implements IAppConfig {
   API_KEY: string;
   END_POINT_KEY: string;
   LOGIN: string;
+  GET_USER_PROFILE: string;
   GET_HOME_CONTENT: string;
   GET_POSTS: string;
   GET_ARTICLES: string;

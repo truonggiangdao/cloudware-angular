@@ -11,7 +11,8 @@ export const validateEmail = (email: string) => {
  * @returns Boolean
  */
 export const validatePassword = (password: string) => {
-  return /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,20}$/.test(password);
+  // return /^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,20}$/.test(password);
+  return Boolean(password && password.length > 5 && password.length < 20);
 };
 
 export default {
