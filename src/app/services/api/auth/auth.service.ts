@@ -18,7 +18,7 @@ export class AuthService {
   * @returns Observable
   */
   login(email: string, password: string) {
-    return this.http.get<ILoginResponse>(this.appConfig.LOGIN, {email, password}, false);
+    return this.http.post<ILoginResponse>(this.appConfig.LOGIN, {email, password}, false);
   }
 
   /**

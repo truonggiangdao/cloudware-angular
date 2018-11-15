@@ -119,12 +119,4 @@ export class LoginComponent {
   goToMainScreen = () => {
     this.router.navigate(['/main']);
   }
-
-  goToForgot = () => {
-    this.router.navigate(['/auth/forgot']);
-  }
-
-  goToRegister = () => {
-    this.router.navigate(['/auth/register']);
-  }
 }

@@ -19,6 +19,7 @@ import { Cookie } from './services/storage/cookie';
 import { HomeService } from './services/api/home/home.service';
 import { AuthService } from './services/api/auth/auth.service';
 import { ContentService } from './services/api/content/content.service';
+import { ErrorService } from './services/common/error.service';
 import { NetworkConnection } from './common/classes/NetworkConnection';
 import { UserStore } from './store/user.store';
 
@@ -80,6 +81,7 @@ import { FocusDirective } from './directives/focus.directive';
     HomeService,
     AuthService,
     ContentService,
+    ErrorService,
     httpInterceptorProviders,
   ],
   bootstrap: [AppComponent]
