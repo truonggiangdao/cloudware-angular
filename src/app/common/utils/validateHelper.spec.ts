@@ -15,17 +15,12 @@ describe('ValidateHelper', () => {
   });
 
   it('validatePassword should works correctly', () => {
-    expect(validatePassword('OccuP')).toBe(true);
-    expect(validatePassword('OccuP12')).toBe(false);
-    expect(validatePassword('OccuP1')).toBe(false);
-    expect(validatePassword('OccuP12342314')).toBe(false);
-    expect(validatePassword('12')).toBe(false);
-    expect(validatePassword('123')).toBe(false);
-    expect(validatePassword('Occ1')).toBe(false);
-    expect(validatePassword('Occu#')).toBe(false);
-    expect(validatePassword('Occ#uP')).toBe(false);
-    expect(validatePassword('OccuP@')).toBe(false);
-    expect(validatePassword('Occ12')).toBe(true);
+    expect(validatePassword('psswd')).toBe(false);
+    expect(validatePassword('passwd')).toBe(true);
+    expect(validatePassword('')).toBe(false);
+    expect(validatePassword('Passwd12342314')).toBe(true);
+    expect(validatePassword('sa@mp$le')).toBe(true);
+    expect(validatePassword('!@#$%^&*(')).toBe(true);
   });
 });
 
